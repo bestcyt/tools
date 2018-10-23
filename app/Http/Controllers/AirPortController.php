@@ -90,13 +90,7 @@ class AirPortController extends Controller
 
         $file= public_path().'\air.php';
         $text='<?php $rows='.var_export($re,true).';';
-//        if(false!==fopen($file,'w+')){
-//            file_put_contents($file,$text);
-//        }else{
-//            echo '创建失败';
-//        }
-//        dd($file);
-//        exit();
+
         file_put_contents($file,$text);
         return response()->download($file, 'air.php',['Content-Type' => 'text/html',]);
 
