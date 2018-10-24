@@ -17,8 +17,11 @@ Route::get('/', function () {
 
 Route::get('airport','AirPortController@index');
 Route::get('test','AirPortController@test');
+Route::get('email','AirPortController@sendemail');
 
 Route::post('airport','AirPortController@post');
 Route::post('airportarray','AirPortController@postArray');
 
 Route::get('vue/todos','VueTodosController@index');
+
+

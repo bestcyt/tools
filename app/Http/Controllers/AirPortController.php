@@ -129,7 +129,39 @@ class AirPortController extends Controller
 
     }
 
+    public function sendemail(){
+        $mail_data['from'] = '850160757@qq.com';
+        $mail_data['sender'] = '850160757@qq.com';
+        $mail_data['to'] = '850160757@qq.com';
+        $mail_data['subject'] = '付款确认邮件 ' ;
+        $mail_data['body'] = 'this is a test email f';
+        $re = $this->sendEmailWithApi($mail_data);
+        dd($re);
+    }
 
+    public function sendEmailWithApi($data) {
+        $url = 'https://bus.kaytrip.com/misc/save-pending-email';
+        $data['encrypt'] = 'lsouism2016';
+        $res = $this->getContentsWithCurl($url, $data);
+        return $res ? 1 : 0;
+    }
+
+    public function getContentsWithCurl($url, $content = 0) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $flag = $content ? 1 : 0;
+        curl_setopt($ch, CURLOPT_POST, $flag);
+        $content && curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return $response;
+    }
 
 }
 
