@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Facades\Excel;
 
 class AirPortController extends Controller
@@ -130,7 +131,7 @@ class AirPortController extends Controller
     }
 
     public function sendemail(){
-        $mail_data['from'] = '850160757@qq.com';
+        $mail_data['from'] = 'travel@kaiyuan.de';
         $mail_data['sender'] = '850160757@qq.com';
         $mail_data['to'] = '850160757@qq.com';
         $mail_data['subject'] = '付款确认邮件 ' ;
@@ -143,6 +144,7 @@ class AirPortController extends Controller
         $url = 'https://bus.kaytrip.com/misc/save-pending-email';
         $data['encrypt'] = 'lsouism2016';
         $res = $this->getContentsWithCurl($url, $data);
+        Log::info('res->'.$res);
         return $res ? 1 : 0;
     }
 

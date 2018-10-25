@@ -23,5 +23,6 @@ Route::post('airport','AirPortController@post');
 Route::post('airportarray','AirPortController@postArray');
 
 Route::get('vue/todos','VueTodosController@index');
+Route::get('vue/todos-component','VueTodosController@component');
 
 
