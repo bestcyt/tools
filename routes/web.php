@@ -25,4 +25,11 @@ Route::post('airportarray','AirPortController@postArray');
 Route::get('vue/todos','VueTodosController@index');
 Route::get('vue/todos-component','VueTodosController@component');
 
+//Route::get('api/todos',function (){
+//    return response()->json([
+//        ['id'=>1,'title'=>'learn vue.js','completed'=>false],
+//        ['id'=>2,'title'=>'learn laravel','completed'=>false],
+//    ]);
+//})->middleware();
+
 

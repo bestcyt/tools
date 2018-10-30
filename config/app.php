@@ -179,6 +179,8 @@ return [
 
         //Excel
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        //跨域
+        Barryvdh\Cors\ServiceProvider::class,
     ],
 
     /*
