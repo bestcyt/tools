@@ -25,6 +25,8 @@ Route::post('airportarray','AirPortController@postArray');
 Route::get('vue/todos','VueTodosController@index');
 Route::get('vue/todos-component','VueTodosController@component');
 
+Route::get('packages/pdf','PackagesController@pdf');
+
 //Route::get('api/todos',function (){
 //    return response()->json([
 //        ['id'=>1,'title'=>'learn vue.js','completed'=>false],
@@ -32,4 +34,4 @@ Route::get('vue/todos-component','VueTodosController@component');
 //    ]);
 //})->middleware();
 
-
+//Route::get('layui/table/edit','');

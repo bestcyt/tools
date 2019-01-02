@@ -181,6 +181,9 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         //跨域
         Barryvdh\Cors\ServiceProvider::class,
+
+        //导出PDF
+        Barryvdh\Snappy\ServiceProvider::class,
     ],
 
     /*
@@ -230,6 +233,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
     ],
 
 ];

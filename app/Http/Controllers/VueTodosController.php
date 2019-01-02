@@ -21,4 +21,8 @@ class VueTodosController extends Controller
 
         return view('vue.todos.todos-component');
     }
+
+    public function gettable(){
+
+    }
 }
