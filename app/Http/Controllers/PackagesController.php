@@ -15,7 +15,7 @@ class PackagesController extends Controller
         $html = response(view('package.pdfView')->with('data','testtesttest'))->getContent();
 
 //        return $html->inline();
-        $snappy->generateFromHtml($html, public_path().'/'.rand(2,20).'.pdf');
+        return $snappy->generateFromHtml($html, public_path().'/'.rand(2,20).'.pdf');
 //        $snappy->generate('http://www.github.com', public_path().'/'.rand(1,20).'.pdf');
 ////Or output:
         return new Response(

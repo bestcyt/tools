@@ -5,7 +5,7 @@ return array(
 
     'pdf' => array(
         'enabled' => true,
-        'binary'  => '/usr/bin/wkhtmltopdf',
+        'binary'  => 'E:\laragon\www\source\wkhtml\wkhtmltopdf\bin\wkhtmltopdf.exe',
         'timeout' => false,
         'options' => array(),
         'env'     => array(),
