@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-	createhtml::class
+	    createhtml::class
         //
     ];
 
@@ -26,9 +26,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-$schedule->command('createhtml')->everyMinute();
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('create:createhtml')->everyMinute();
     }
 
     /**

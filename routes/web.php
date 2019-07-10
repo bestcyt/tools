@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function (\Illuminate\Http\Request $request) {
-    dd($request->header());
-});
+
+
+//翻译功能
+Route::get('/translate','TranslateController@index');
 
 Route::get('airport','AirPortController@index');
 Route::get('test','AirPortController@test');
@@ -26,6 +27,10 @@ Route::get('vue/todos','VueTodosController@index');
 Route::get('vue/todos-component','VueTodosController@component');
 
 Route::get('packages/pdf','PackagesController@pdf');
+
+Route::get('/', function (\Illuminate\Http\Request $request) {
+    dd('tools');
+});
 
 //Route::get('api/todos',function (){
 //    return response()->json([

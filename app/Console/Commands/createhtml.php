@@ -38,6 +38,6 @@ class createhtml extends Command
     public function handle()
     {
         //
-	Log::info('aaaaa');
+	 Log::info('aaaaa');
     }
 }
