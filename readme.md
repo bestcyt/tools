@@ -10,7 +10,8 @@ this is a tool project for solve some problems
 
 ###断路器
 controller BreakerController  
-trait RedisBreaker
+trait RedisBreaker  
+BreakerMiddleware  
 $routeMiddleware中添加breaker中间件   
 在路由中添加中间件  
 Route::get('breaker/testBreaker','BreakerController@testBreaker')
