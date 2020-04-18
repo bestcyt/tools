@@ -8,4 +8,10 @@ this is a tool project for solve some problems
 中文翻英文http://tools.bestcyt.cn/translate?lanType=en&q=电脑
 英文翻中文http://tools.bestcyt.cn/translate?lanType=cn&q=school
 
-aaa
+###断路器
+controller BreakerController  
+trait RedisBreaker
+$routeMiddleware中添加breaker中间件   
+在路由中添加中间件  
+Route::get('breaker/testBreaker','BreakerController@testBreaker')
+         ->middleware(['breaker']);
