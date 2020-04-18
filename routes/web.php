@@ -32,6 +32,10 @@ Route::get('/', function (\Illuminate\Http\Request $request) {
     dd('tools');
 });
 
+//断路器测试
+Route::get('breaker/testBreaker','BreakerController@testBreaker')
+->middleware(['breaker']);
+
 //Route::get('api/todos',function (){
 //    return response()->json([
 //        ['id'=>1,'title'=>'learn vue.js','completed'=>false],

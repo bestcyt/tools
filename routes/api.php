@@ -23,3 +23,6 @@ Route::get('/todos',function (){
         ['id'=>2,'title'=>'learn laravel','completed'=>false],
     ]);
 });
+
+Route::get('breaker/testBreaker','BreakerController@testBreaker')
+->middleware(['breaker']);
