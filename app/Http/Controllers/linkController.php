@@ -61,21 +61,6 @@ class linkController extends Controller
         dd($u);
     }
 
-    public function aaa(){
-//        $t = 'site%3Amy.4399.com%20张军'.'&ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&ts='.rand(1,9);
-        for ($i=0;$i<20;$i++){
-            $t = 'site%3Amy.4399.com%20张军'.'&ie=utf-8&f=8&rsv_bp=1&rsv_idx=1';
-            $host = 'http://localhost:4444/wd/hub'; // this is the default
-            $host = 'http://localhost:9515'; // this is the default
-            $capabilities = DesiredCapabilities::chrome();
-            $driver = RemoteWebDriver::create($host, $capabilities, 5000);
-            $driver->get('https://www.baidu.com/s?wd='.$t);
-            $data['word'] = '张军'.rand(1,99);
-            $data['search_link'] = $driver->getCurrentURL();
-            $data['search_html'] = $driver->getPageSource();
-            DB::table('words')->insert($data);
-        }
-    }
 
     //从word文档导入词
     public function inputWords(){
@@ -197,6 +182,7 @@ class linkController extends Controller
         $driver->wait(10);
         $url = $driver->getCurrentURL();
         $driver->get($url);
+        $search_link = $driver->getCurrentURL();
 //        $driver->quit();
         return [
             'search_link' => $search_link,
