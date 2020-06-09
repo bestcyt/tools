@@ -10,9 +10,23 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/translate','TranslateController@index');
+//敏感词列表-webDriver方法
+Route::get('/test2','linkController@test2');
+Route::get('/inputWords','linkController@inputWords');
+Route::get('/getWordP','linkController@getWordP');
+Route::get('/getWordsUrl','linkController@getWordsUrl');
+Route::get('/htmlExport','linkController@htmlExport');
 
+//360
+Route::get('/getWordP360','linkController@getWordP360');
+Route::get('/getWordsUrl360','linkController@getWordsUrl360');
 
+//搜狗
+Route::get('/getWordPSg','linkController@getWordPSg');
+Route::get('/getWordsUrlSg','linkController@getWordsUrlSg');
+
+//phpquery test
+Route::get('/pqTest','phpQueryController@pqTest');
 
 //翻译功能
 Route::get('/translate','TranslateController@index');
