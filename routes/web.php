@@ -17,6 +17,13 @@ Route::get('/getWordP','linkController@getWordP');
 Route::get('/getWordsUrl','linkController@getWordsUrl');
 Route::get('/htmlExport','linkController@htmlExport');
 
+//word文档测试
+Route::get('/word','WordController@test');
+Route::get('/docx','docxController@index');
+
+//curl
+Route::get('/curl','CurlController@index');
+
 //360
 Route::get('/getWordP360','linkController@getWordP360');
 Route::get('/getWordsUrl360','linkController@getWordsUrl360');
@@ -27,6 +34,7 @@ Route::get('/getWordsUrlSg','linkController@getWordsUrlSg');
 
 //phpquery test
 Route::get('/pqTest','phpQueryController@pqTest');
+Route::get('/singlePqTest','singlephpQueryController@singlePqTest');
 
 //翻译功能
 Route::get('/translate','TranslateController@index');

@@ -11,6 +11,11 @@ class phpQueryController extends Controller
     public $searchUrl = 'https://www.baidu.com/s?wd=';
     //
     public function pqTest(){
+        $html = ' <div><div class="results">   <!-- kmapLeftViewBegin -->  <!-- kmapLeftViewEnd -->     <style>.zhanzhang{overflow:hidden;zoom:1}.zhanzhang .zz_tit{font-size:14px;font-weight:700}.zhanzhang .zz_txt{margin:7px 0 13px 19px}.zhanzhang .zz_ico{margin-right:6px;vertical-align:middle}</style><div class="rb"><div class="zhanzhang"><h3 class="pt zz_tit">';
+        \phpQuery::newDocument($html);
+        if (pq('.zhanzhang'))
+
+
 //        dd('pq');
         $page = DB::table('word_pages')->first();
         $url = 'https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=2&tn=baiduhome_pg&wd=phpquery&rsv_spt=1&oq=site%253Amy.4%2526lt%253B99.com%2520%25E4%25B9%25A0%25E8%25BF%2591%25E5%25B9%25B3&rsv_pq=baadafe9000bd25a&rsv_t=d1bahV7oO744ntWhMh%2BVioiXfax9enS63hoDywTyyQ9%2BLgzhv4I9KvG%2Bg81tXphgduIY&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=14&rsv_sug1=5&rsv_sug7=100&rsv_sug2=0&rsv_btype=t&inputT=1607&rsv_sug4=11760';
