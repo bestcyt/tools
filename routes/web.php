@@ -37,7 +37,7 @@ Route::get('/pqTest','phpQueryController@pqTest');
 Route::get('/singlePqTest','singlephpQueryController@singlePqTest');
 
 //翻译功能
-Route::get('/translate','TranslateController@index');
+Route::get('/translate','TranslateController@index'); //?q=中国&lanType=en
 
 Route::get('airport','AirPortController@index');
 Route::get('test','AirPortController@test');
