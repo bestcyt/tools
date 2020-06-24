@@ -6,10 +6,36 @@ use Illuminate\Http\Request;
 //use PhpOffice\PhpWord\IOFactory;
 //use PhpOffice\PhpWord\PhpWord;
 
-require_once public_path().'/phpword';
+//require_once public_path().'/phpword';
 
 class WordController extends Controller
 {
+
+    public function getWordDoc(){
+        //来源
+        if (strpos($_SERVER['HTTP_REFERER'], 'tools') === false){
+            return response('非法请求',120);
+        }
+        $fileName = $_FILES['wordupload']['name'];  //文档上传名称
+        $fileTmpName = $_FILES['wordupload']['tmp_name'];  //文档上传临时名称
+        //判断是否是docx
+        $fileType = pathinfo($fileName)['extension'];
+        if ($fileType != 'docx'){
+            return response('文件格式不正确',120);
+        }
+        return response($fileName,120);
+        //转移文件重命名
+        $newFileName = 'wordHtml-'.date("Ymd-His",time()).'-'.$fileName;
+        move_uploaded_file($fileTmpName, public_path().'/tmp/'.$newFileName);
+
+        //获取到解析的html
+        //$cccFile = dirname(__FILE__).'/'.'ccc.docx';
+        //$html =  mdlWordToHtml::getWordHtml($cccFile);
+        $html =  mdlWordToHtml::getWordHtml('/tmp/'.$newFileName);
+        return $this->response(100,[
+            'name'=>$newFileName,'html'=>$html
+        ]);
+    }
     public function test3(){
         $file = public_path().'/wordTest';
         $filename = public_path().'/wordTest/aaa.docx';

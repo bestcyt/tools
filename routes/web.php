@@ -18,7 +18,11 @@ Route::get('/getWordsUrl','linkController@getWordsUrl');
 Route::get('/htmlExport','linkController@htmlExport');
 
 //word文档测试
-Route::get('/word','WordController@test');
+//Route::get('/word','WordController@test');
+Route::post('/word-post','WordController@getWordDoc');
+Route::get('/word',function (){
+    return view('word.word');
+});
 Route::get('/docx','docxController@index');
 
 //curl
